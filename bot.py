@@ -29,7 +29,7 @@ def check_flight_status():
         soup = BeautifulSoup(response.text, 'html.parser')
         rows = soup.find_all('tr')
         for row in rows:
-            if 'SU1251' in row.text:
+            if 'SU 1251' in row.text:
                 return row.text.strip()
         return "⚠️ Рейс SU1251 не найден на табло."
     except Exception as e:
